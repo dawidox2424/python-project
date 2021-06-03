@@ -55,5 +55,5 @@ class Menu:
         self._blad.config(text=comment)
         self._blad.grid(row=6, columnspan=2)
 
-    def getEntryData(self):
+    def getDaneWejsciowe(self):
         return self._szerokosc.get(), self._wysokosc.get(), self._miny.get()

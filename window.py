@@ -19,7 +19,7 @@ class Okno:
 
         self.menu = Menu(self._okno, sterowanie)
         self.mapa = mapaGry(self._okno, sterowanie)
-        self.mapa.timer()
+        self.mapa.zegar()
 
     def Loop(self):
         self._okno.mainloop()  # petla "utrzymujaca" okienko
