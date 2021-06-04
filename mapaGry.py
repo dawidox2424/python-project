@@ -3,8 +3,8 @@ from tkinter import *
 
 from przycisk import przycisk
 
-
 class mapaGry:
+
     def __init__(self, okno, ster, pozycjax=3, pozycjay=1):
         self._ster = ster
         self._px = pozycjax
@@ -49,7 +49,7 @@ class mapaGry:
                                      i + self._px, j + self._py + 1)
                              for i in range(szerokosc)] for j in range(wysokosc)]
 
-    def nowa(self, wysokosc, width, miny):
+    def nowa(self, height, width, miny):
         self._oznaczoneMiny = 0
         self._liczbaMinText.set(str(miny))
 
@@ -66,7 +66,7 @@ class mapaGry:
 
         self._oznaczoneMinyMapaIkona.grid(column=width + self._px + 2, row=self._py + 2)
         self._oznaczoneMinyMapa.grid(column=width + self._px + 3, row=self._py + 2)
-        self.rysujPrzyciski(width, wysokosc)
+        self.rysujPrzyciski(width, height)
         self._started = True
         self._czas_start = False
 
@@ -101,3 +101,7 @@ class mapaGry:
         [[xx.dezaktywuj() for xx in yy] for yy in self._mapa_przycikow]
         self._mapa_przycikow[y][x].mark(oznaczenie="minered")
         self._czas_start = False
+
+    def get_mapOfButtons(self, width, height):
+        self.rysujPrzyciski(width, height)
+        return self._mapa_przycikow

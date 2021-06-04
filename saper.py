@@ -147,3 +147,16 @@ class Saper:
                 self._wyczyszczonePola == self._szerokoscMapy * self._wysokoscMapy - self._miny:
             self._koniecGry = True
             self._widok.mapa.wygrana()
+
+    def setTestValues(self, height, width, mines):
+        self._wysokoscMapy = height
+        self._szerokoscMapy = width
+        self._miny = mines
+        self._oznaczoneMiny = 0
+        self._dobrzeOznaczoneMiny = 0
+        self._wyczyszczonePola = 0
+        self._koniecGry = False
+        if not 2 <= self._szerokoscMapy <= 15 or not 2 <= self._wysokoscMapy <= 15 or \
+                not 0 <= self._miny <= self._szerokoscMapy * self._wysokoscMapy:
+            raise Exception("BŁĘDNE DANE!")
+        self.rysujMape()
