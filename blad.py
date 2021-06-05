@@ -1,3 +1,6 @@
+"""
+Własny wyjątek (jedno z wymagań dodatkowych)
+"""
 
 class zledane(Exception):
     def __init__(self, komentarz):
